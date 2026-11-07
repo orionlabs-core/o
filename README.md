@@ -8,4 +8,4 @@
 ---
 
 > [!WARNING]
-> **Copyright (C) 2026 OrionLabs**
+> **© 2026 Orion Labs.**

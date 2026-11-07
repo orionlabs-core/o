@@ -439,6 +439,37 @@
             margin-top: auto;
         }
 
+        /* Carrusel de fotos horizontal */
+        .about-carousel {
+            width: 100%;
+            height: 320px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--spacex-border);
+            background: var(--spacex-card-bg);
+            margin-bottom: 30px;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         .about-container h1 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -547,6 +578,10 @@
                 padding: 90px 20px 70px 20px;
             }
             .about-container h1 { font-size: 2rem; }
+            
+            .about-carousel {
+                height: 200px;
+            }
 
             .btn-spacex {
                 width: 100%;
@@ -649,9 +684,24 @@
             </div>
         </div>
 
-        <!-- PANTALLA 3: ACERCA DE (Estructura simplificada: Título único + Descripción general) -->
+        <!-- PANTALLA 3: ACERCA DE -->
         <div id="acerca" class="screen">
             <div class="about-container">
+                <!-- Carrusel de fotos horizontal que se autodesplaza -->
+                <div class="about-carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <img src="orion/resources/images/slide1.jpg" alt="Slide 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="orion/resources/images/slide2.jpg" alt="Slide 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="orion/resources/images/slide3.jpg" alt="Slide 3">
+                        </div>
+                    </div>
+                </div>
+
                 <h1 data-i18n="about_title">• Orion Labs</h1>
                 <p data-i18n="about_description">
                     Desarrollador independiente de apps y ports para Android/ATV y WebOS. Enfocado en proyectos tecnológicos avanzados, herramientas de sistema y arquitecturas personalizadas bajo principios de minimalismo absoluto y rendimiento puro.
@@ -753,11 +803,27 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Lógica del carrusel automático de fotos
+        let currentSlide = 0;
+        function initCarousel() {
+            const track = document.getElementById('carouselTrack');
+            if (!track) return;
+            const slides = track.querySelectorAll('.carousel-slide');
+            const totalSlides = slides.length;
+
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }, 4000); // Cambia de foto cada 4 segundos
+        }
+
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const splash = document.getElementById('splash-screen');
                 splash.classList.add('fade-out');
             }, 2500);
+
+            initCarousel();
         });
     </script>
 

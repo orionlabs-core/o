@@ -424,7 +424,7 @@
         }
 
         /* ==========================================
-           PANTALLA 3: ACERCA DE
+           PANTALLA 3: ACERCA DE (ESTRUCTURA SIMPLIFICADA)
            ========================================== */
         #acerca {
             padding: 100px 80px 90px 80px;
@@ -432,14 +432,14 @@
             justify-content: flex-end;
         }
 
-        .markdown-container {
+        .about-container {
             max-width: 850px;
             border-top: 1px solid var(--spacex-border);
             padding-top: 30px;
             margin-top: auto;
         }
 
-        .markdown-container h1 {
+        .about-container h1 {
             font-size: 2.5rem;
             font-weight: 700;
             letter-spacing: 3px;
@@ -447,45 +447,15 @@
             margin-bottom: 20px;
         }
 
-        .markdown-container h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 30px;
-            margin-bottom: 12px;
-            color: var(--spacex-white);
-        }
-
-        .markdown-container p {
+        .about-container p {
             color: var(--spacex-gray);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .markdown-container ul {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .markdown-container li {
-            color: var(--spacex-gray);
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .markdown-container li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--spacex-white);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
         }
 
         .github-box {
-            margin-top: 25px;
+            margin-top: 10px;
             margin-bottom: 20px;
         }
 
@@ -525,8 +495,6 @@
                 padding: 0 20px;
                 height: 70px;
             }
-
-            /* Se removió la línea que limitaba el tamaño del logo en móviles */
 
             .menu-toggle {
                 display: flex;
@@ -578,7 +546,7 @@
             #acerca {
                 padding: 90px 20px 70px 20px;
             }
-            .markdown-container h1 { font-size: 2rem; }
+            .about-container h1 { font-size: 2rem; }
 
             .btn-spacex {
                 width: 100%;
@@ -681,19 +649,13 @@
             </div>
         </div>
 
-        <!-- PANTALLA 3: ACERCA DE -->
+        <!-- PANTALLA 3: ACERCA DE (Estructura simplificada: Título único + Descripción general) -->
         <div id="acerca" class="screen">
-            <div class="markdown-container">
-                <h1>•Orion Labs</h1>
-                <p data-i18n="about_intro">Desarrollador independiente de apps y ports para Android/ATV y WebOS</p>
-                <p data-i18n="about_dev_desc">Soy un desarrollador enfocado en proyectos tecnológicos avanzados, herramientas de sistema y arquitecturas personalizadas cuando surge la oportunidad.</p>
-
-                <h2 data-i18n="about_principles_title">## Principios</h2>
-                <ul>
-                    <li data-i18n="about_p1"><strong>Minimalismo Absoluto:</strong> Eliminación de interfaces innecesarias en favor del rendimiento.</li>
-                    <li data-i18n="about_p2"><strong>Sistemas Autónomos:</strong> Creación de soluciones independientes y duraderas.</li>
-                    <li data-i18n="about_p3"><strong>Precisión:</strong> Código limpio orientado a la estabilidad funcional.</li>
-                </ul>
+            <div class="about-container">
+                <h1 data-i18n="about_title">• Orion Labs</h1>
+                <p data-i18n="about_description">
+                    Desarrollador independiente de apps y ports para Android/ATV y WebOS. Enfocado en proyectos tecnológicos avanzados, herramientas de sistema y arquitecturas personalizadas bajo principios de minimalismo absoluto y rendimiento puro.
+                </p>
 
                 <!-- Botón de acceso a GitHub -->
                 <div class="github-box">
@@ -727,12 +689,8 @@
                 app2_desc: "Cliente basado en SmartTube",
                 app3_title: "Próximamente",
                 app3_desc: "Trabajando",
-                about_intro: "Laboratorio y centro de desarrollo independiente dedicado a la ingeniería de software rápida y autónoma.",
-                about_dev_desc: "Soy un desarrollador enfocado en proyectos tecnológicos avanzados, herramientas de sistema y arquitecturas personalizadas cuando surge la oportunidad.",
-                about_principles_title: "## Principios",
-                about_p1: "<strong>Minimalismo Absoluto:</strong> Eliminación de interfaces innecesarias en favor del rendimiento.",
-                about_p2: "<strong>Sistemas Autónomos:</strong> Creación de soluciones independientes y duraderas.",
-                about_p3: "<strong>Precisión:</strong> Código limpio orientado a la estabilidad funcional.",
+                about_title: "• Orion Labs",
+                about_description: "Desarrollador independiente de apps y ports para Android/ATV y WebOS. Enfocado en proyectos tecnológicos avanzados, herramientas de sistema y arquitecturas personalizadas bajo principios de minimalismo absoluto y rendimiento puro.",
                 github_btn: "Visitar GitHub"
             },
             en: {
@@ -750,12 +708,8 @@
                 app2_desc: "SmartTube-based client",
                 app3_title: "Soon",
                 app3_desc: "Working",
-                about_intro: "Independent laboratory and development hub dedicated to fast and autonomous software engineering.",
-                about_dev_desc: "Independent developer focused on advanced tech projects, system tools, and custom architectures.",
-                about_principles_title: "## Principles",
-                about_p1: "<strong>Absolute Minimalism:</strong> Removal of unnecessary interfaces in favor of raw performance.",
-                about_p2: "<strong>Autonomous Systems:</strong> Building long-lasting and independent solutions.",
-                about_p3: "<strong>Precision:</strong> Clean code oriented towards functional stability.",
+                about_title: "• Orion Labs",
+                about_description: "Independent developer of apps and ports for Android/ATV and WebOS. Focused on advanced tech projects, system tools, and custom architectures under principles of absolute minimalism and pure performance.",
                 github_btn: "Visit GitHub"
             }
         };

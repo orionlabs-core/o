@@ -424,73 +424,6 @@
         }
 
         /* ==========================================
-           PANTALLA 3: ACERCA DE (ESTRUCTURA SIMPLIFICADA)
-           ========================================== */
-        #acerca {
-            padding: 100px 80px 90px 80px;
-            background-color: var(--spacex-black);
-            justify-content: flex-end;
-        }
-
-        .about-container {
-            max-width: 850px;
-            border-top: 1px solid var(--spacex-border);
-            padding-top: 30px;
-            margin-top: auto;
-        }
-
-        /* Carrusel de fotos horizontal */
-        .about-carousel {
-            width: 100%;
-            height: 320px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--spacex-border);
-            background: var(--spacex-card-bg);
-            margin-bottom: 30px;
-        }
-
-        .carousel-track {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            height: 100%;
-            flex-shrink: 0;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .about-container h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .about-container p {
-            color: var(--spacex-gray);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .github-box {
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* ==========================================
            COPYRIGHT
            ========================================== */
         footer {
@@ -518,7 +451,7 @@
         @media (max-width: 1024px) {
             nav { padding: 0 30px; }
             #inicio { padding: 0 0 80px 40px; }
-            #apps, #acerca { padding-left: 40px; padding-right: 40px; }
+            #apps { padding-left: 40px; padding-right: 40px; }
         }
 
         @media (max-width: 768px) {
@@ -574,15 +507,6 @@
             }
             .page-header h1 { font-size: 2rem; }
 
-            #acerca {
-                padding: 90px 20px 70px 20px;
-            }
-            .about-container h1 { font-size: 2rem; }
-            
-            .about-carousel {
-                height: 200px;
-            }
-
             .btn-spacex {
                 width: 100%;
                 padding: 14px 20px;
@@ -622,7 +546,6 @@
             <ul>
                 <li><button onclick="switchScreen('inicio')" id="btn-inicio" class="nav-link active" data-i18n="nav_inicio">Inicio</button></li>
                 <li><button onclick="switchScreen('apps')" id="btn-apps" class="nav-link" data-i18n="nav_apps">Apps</button></li>
-                <li><button onclick="switchScreen('acerca')" id="btn-acerca" class="nav-link" data-i18n="nav_acerca">Acerca de</button></li>
             </ul>
 
             <div class="lang-switch">
@@ -644,7 +567,7 @@
                 </video>
             </div>
             <div class="hero-content">
-                <h2 data-i18n="hero_sub">OrionLabs</h2>
+                <h2 data-i18n="hero_sub">Orionlabs</h2>
                 <h1 data-i18n="hero_title">Desarrollador independiente de apps y ports para Android/ATV y WebOS</h1>
                 <a href="#apps" onclick="switchScreen('apps')" class="btn-spacex" data-i18n="hero_btn">VER APPS</a>
             </div>
@@ -692,36 +615,6 @@
             </div>
         </div>
 
-        <!-- PANTALLA 3: ACERCA DE -->
-        <div id="acerca" class="screen">
-            <div class="about-container">
-                <!-- Carrusel de fotos horizontal que se autodesplaza -->
-                <div class="about-carousel">
-                    <div class="carousel-track" id="carouselTrack">
-                        <div class="carousel-slide">
-                            <img src="orion/resources/images/slide1.jpg" alt="Slide 1">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="orion/resources/images/slide2.jpg" alt="Slide 2">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="orion/resources/images/slide3.jpg" alt="Slide 3">
-                        </div>
-                    </div>
-                </div>
-
-                <h1 data-i18n="about_title">• Orion Labs</h1>
-                <p data-i18n="about_description">
-                    Desarrollador independiente de apps y ports para Android/ATV y WebOS. Enfocado en proyectos tecnológicos avanzados, herramientas de sistema y arquitecturas personalizadas bajo principios de minimalismo absoluto y rendimiento puro.
-                </p>
-
-                <!-- Botón de acceso a GitHub -->
-                <div class="github-box">
-                    <a href="https://github.com/orionlabs-core" target="_blank" class="btn-spacex" data-i18n="github_btn">Visita GitHub</a>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <!-- COPYRIGHT -->
@@ -735,7 +628,6 @@
             es: {
                 nav_inicio: "Inicio",
                 nav_apps: "Apps",
-                nav_acerca: "Acerca de",
                 hero_sub: "Orionlabs",
                 hero_title: "Desarrollador independiente de apps y ports para Android/ATV y WebOS",
                 hero_btn: "VER APPS",
@@ -748,15 +640,11 @@
                 app3_title: "Próximamente",
                 app3_desc: "Trabajando",
                 app4_title: "Próximamente",
-                app4_desc: "Trabajando",
-                about_title: "• Orion Labs",
-                about_description: "Desarrollador independiente de apps y ports para Android/ATV y WebOS. Enfocado en proyectos tecnológicos avanzados, herramientas de sistema y arquitecturas personalizadas bajo principios de minimalismo absoluto y rendimiento puro.",
-                github_btn: "Visitar GitHub"
+                app4_desc: "Trabajando"
             },
             en: {
                 nav_inicio: "Home",
                 nav_apps: "Apps",
-                nav_acerca: "About",
                 hero_sub: "Orionlabs",
                 hero_title: "Independent developer of apps and ports for Android/ATV and WebOS",
                 hero_btn: "VIEW APPS",
@@ -769,10 +657,7 @@
                 app3_title: "Soon",
                 app3_desc: "Working",
                 app4_title: "Soon",
-                app4_desc: "Working",
-                about_title: "• Orion Labs",
-                about_description: "Independent developer of apps and ports for Android/ATV and WebOS. Focused on advanced tech projects, system tools, and custom architectures under principles of absolute minimalism and pure performance.",
-                github_btn: "Visit GitHub"
+                app4_desc: "Working"
             }
         };
 
@@ -815,27 +700,11 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Lógica del carrusel automático de fotos
-        let currentSlide = 0;
-        function initCarousel() {
-            const track = document.getElementById('carouselTrack');
-            if (!track) return;
-            const slides = track.querySelectorAll('.carousel-slide');
-            const totalSlides = slides.length;
-
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }, 4000); // Cambia de foto cada 4 segundos
-        }
-
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const splash = document.getElementById('splash-screen');
                 splash.classList.add('fade-out');
             }, 2500);
-
-            initCarousel();
         });
     </script>
 
